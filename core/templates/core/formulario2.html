@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Validación de Formulario con Javascript</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+	{% load static%}
+	<link rel="stylesheet" href="{% static 'core/css/styleformulario2.css'%}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<style>
+        #map {
+            height: 500px; 
+            width: 500px;
+        }
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        
+      </style>
+</head>
+<body style="background-color: rgb(214, 165, 74);">
+
+	<ul class="menu">
+		<li><center><a href="ini"><img src="{% static 'core/Img/logo.png'%}" width="30" height="30" ></a></center></li>
+		<li><a href="ini">Inicio</a></li>
+		<li><a href="quienesSomos">Quienes Somos</a></li>
+		<li><a href="Galeria">Galeria de Fotos</a></li>
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				Formularios
+			  </a>
+			<ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+				<li><a class="dropdown-item" href="home">Registrarse</a></li>
+				<li><a class="dropdown-item" href="#">Comprar Producto</a></li>
+			</ul>
+		</li>
+</ul>
+
+	<main>
+		<form action="" class="formulario" id="formulario">
+			<!-- Grupo: nombre -->
+			<div class="formulario__grupo" id="grupo__nombre">
+				<label for="nombre" class="formulario__label">Nombre</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Ingrese su Nombre...">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El Nombre solo debe contener letras </p>
+			</div>
+
+			<!-- Grupo: apellido -->
+			<div class="formulario__grupo" id="grupo__apellido">
+				<label for="apellido" class="formulario__label">Apellido</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Ingrese su Apellido...">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El Apellido solo debe contener letras.</p>
+			</div>
+
+			<!-- Grupo: Correo Electronico -->
+			<div class="formulario__grupo" id="grupo__correo">
+				<label for="correo" class="formulario__label">Correo Electrónico</label>
+				<div class="formulario__grupo-input">
+					<input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+			</div>
+
+			<!-- Grupo: Teléfono -->
+			<div class="formulario__grupo" id="grupo__telefono">
+				<label for="telefono" class="formulario__label">Teléfono</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="Ingrese número telefonico...">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El telefono solo puede contener numeros, el minimo de digitos es 7 y el maximo 9.</p>
+			</div>
+
+
+			<!-- Grupo: producto -->
+			<div class="formulario__grupo" id="grupo__producto">
+				<label for="producto" class="formulario__label">Producto</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="producto" id="producto" placeholder="Ingrese nombre del producto..." >
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El Nombre del producto solo debe contener letras.</p>
+			</div>
+
+            
+			<!-- Grupo: cantidad -->
+			<div class="formulario__grupo" id="grupo__cantidad">
+				<label for="cantidad" class="formulario__label">Cantidad</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="cantidad" id="cantidad" placeholder="Ingrese cantidad deseada... " >
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error"> Solo debe contener numeros minimo 1, maximo 3.</p>
+			</div>
+
+			<!-- Grupo: Terminos y Condiciones -->
+<div class="formulario__grupo" id="grupo__terminos">
+	<label class="formulario__label">
+		<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+		Acepto los Terminos y Condiciones
+	</label>
+</div>
+
+<div class="formulario__mensaje" id="formulario__mensaje">
+	<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+</div>
+
+<div class="formulario__grupo formulario__grupo-btn-enviar">
+	<button type="submit" class="formulario__btn">Enviar</button> <br><br>
+	<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente! pronto nos contactaremos con usted.</p>
+</div>
+
+
+
+			
+		</form>
+
+
+<center><h2>Ingresa tu ubicacion</h2></center><br>
+		<center><input type="text" id="place_input" placeholder="ingresa una ubicacion...">
+			<div id="map"></div>
+			<script async
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-OCDTsNScexQLjN1Bfovfdv1isRc1KPk&libraries=places&callback=initMap">
+		</script></center>
+			<script>
+				const mapDiv = document.getElementById("map");
+				const argcoords = { lat: -33.51120439135618, lng: -70.75236150656836 };
+				const input = document.getElementById("place_input"); 
+				let map;
+				let autocomplete;
+				let marker;
+			
+				function initMap() {
+					map = new google.maps.Map(mapDiv, {
+					center: argcoords,
+					zoom: 17,
+					});
+					marker = new google.maps.Marker({
+					position: argcoords,
+					map: map,
+		  });
+					initAtocomplete();
+					
+		}
+		function initAtocomplete(){
+			autocomplete = new google.maps.places.Autocomplete(input);
+			autocomplete.addListener('place_changed',function(){
+				const place = autocomplete.getPlace();
+				map.setCenter(place.geometry.location);
+				marker.setPosition(place.geometry.location);
+			})
+		
+		}
+		
+		
+			</script>
+		
+
+
+	</main>
+
+		
+	
+	
+
+
+	<footer class="piepagina">
+		<div class="contenidofooter">
+			<figure>
+				<a href="ini" id="logo">
+					<img src="{% static 'core/Img/logo.png'%}" alt="NPG" width="100" >
+				</a>
+			</figure>
+			<div ><h2 >NGP</h2></div> <br><br><br>
+			<h4 class="textofooter">Siguenos</h4>
+			<div class="row justify-content-center"><div class="col-4"><img src="{% static 'core/Img/twitter.png'%}" alt="" class="redsocial"></div>
+			<div class="col-4"><img src="{% static 'core/Img/instagram.png'%}" alt="" class="redsocial"></div>
+			<div class="col-4"><img src="{% static 'core/Img/facebook.png'%}" alt="" class="redsocial"></div>
+		</div>
+			
+		</div>
+		<center><p>Benjamín Cepeda, Guido Altamirano, Nicolas Torrejón, Francisco San Martin </p><br>
+		<p>@Copyright Derechos reservados.</p></center>
+		
+		
+		 
+			
+	 </footer>
+
+	<script src="{% static 'core/js/form2.js'%}"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+</html>

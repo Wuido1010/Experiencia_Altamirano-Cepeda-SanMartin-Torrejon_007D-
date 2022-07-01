@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Galeria De Fotos</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'core/css/Stylo.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+</head>
+<body > 
+  <!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<body  background="{% static 'core/Img/Fondogale.jpg'%}">
+  <ul class="menu">
+    <li><center><a href="ini"><img src="{% static 'core/Img/logo.png'%}" width="30" height="30" ></a></center></li>
+    <li><a href="ini">Inicio</a></li>
+    <li><a href="quienes">Quienes Somos</a></li>
+    <li><a href="#">Galeria de Fotos</a></li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Formularios
+          </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+            <li><a class="dropdown-item" href="home">Registrarse</a></li>
+            <li><a class="dropdown-item" href="home2">Comprar Producto</a></li>
+        </ul>
+    </li>
+</ul>
+  <center><div id="TituloFotos"><h1> Galeria de Fotos </h1></div></center>
+
+    </div><br><br>
+
+    <center><div id="ElJard"><h1> Elementos de la Jardineria </h1></div></center>
+    <br><br><br>
+
+
+
+    <div class="row ">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'core/Img/Herranuevas.jpg'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> Tipos de herramientas </h5>
+            <input type="checkbox" id="evento-click">
+            <label for="evento-click" title="Detalles" class="btn__open-modal">
+                <i class="fas fa-chevron-down"></i>
+            </label>         
+            <div class="background__blur"></div>          
+            <div class="container__modal">         
+                <div class="header__modal">
+                    <label for="evento-click">X</label>
+                </div>          
+                <div class="body__modal">
+                    <h1 class="title__modal"> Herramienta </h1>
+                    <p class="message__modal"> Estas herramientas nos sirven para la jardineria dado que su uso es muy util, estas herramientas son una pala y diferentes tipos de rastrillos el valor de cada una es de alrededor de %15.000 a $30.000 pesos. </p>
+                </div>          
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'core/Img/Mangueranueva.jpg'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Manguera</h5>
+            <input type="checkbox" id="evento-clic">
+            <label for="evento-clic" title="Detalles" class="btn__open-moda">
+                <i class="fas fa-chevron-down"></i>
+            </label>          
+            <div class="background__blur"></div>          
+            <div class="container__moda">         
+                <div class="header__moda">
+                    <label for="evento-clic">X</label>
+                </div>         
+                <div class="body__moda">
+                    <h1 class="title__moda">Manguera </h1>
+                    <p class="message__moda">Esta herramienta se utiliza para regar las plantas y jardines, consta de diferentes tipos de riego con el cual se adhiere a como quiere regar cada persona. Su valor es de $10Mil Pesos </p>
+                </div>
+
+                
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+    </div>
+    <br><br>
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'core/Img/Tijerapodar.jpg'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Tijera de Podar</h5>
+            <input type="checkbox" id="evento-cli">
+            <label for="evento-cli" title="Detalles" class="btn__open-mod">
+                <i class="fas fa-chevron-down"></i>
+            </label>          
+            <div class="background__blur"></div>          
+            <div class="container__mod">          
+                <div class="header__mod">
+                    <label for="evento-cli">X</label>
+                </div>          
+                <div class="body__mod">
+                    <h1 class="title__mod"> Tijeras </h1>
+                    <p class="message__mod"> Esta herramienta tiene como utilidad cortar u podar plantas y arboles, su valor es de %10.000 mil pesos. </p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      
+
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'core/Img/Rastrillo.png'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Rastrillo</h5>
+            <input type="checkbox" id="evento-cl">
+            <label for="evento-cl" title="Detalles" class="btn__open-mo">
+                <i class="fas fa-chevron-down"></i>
+            </label>         
+            <div class="background__blur"></div>         
+            <div class="container__mo">       
+                <div class="header__mo">
+                    <label for="evento-cl">X</label>
+                </div>         
+                <div class="body__mo">
+                    <h1 class="title__mo"> Rastrillo  </h1>
+                    <p class="message__mo">Esta herramienta se utiliza para barrer diferentes zonas de jardines, pueden ser hojas de arboles, hojas de plantas y otras. Su valor es de $15Mil pesos. </p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <br><br><br>
+
+      <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card" style="width: 18rem;">
+            <img src="{% static 'core/Img/Carretillanueva.jpg'%}" class="card-img-top" alt="...">
+            <div class="card-body" >
+              <h5 class="card-title">Carretilla Jardin</h5>
+              <input type="checkbox" id="evento-c">
+              <label for="evento-c" title="Detalles" class="btn__open-m">
+                  <i class="fas fa-chevron-down"></i>
+              </label>           
+              <div class="background__blur"></div>           
+              <div class="container__m">          
+                  <div class="header__m">
+                      <label for="evento-c">X</label>
+                  </div>          
+                  <div class="body__m">
+                      <h1 class="title__m"> Carretilla </h1>
+                      <p class="message__m">Esta herramienta tiene diferentes tipos de uso, uno de ellos es recolectar tierra , el otro uso que puede tener es recolectar las hojas u ramas. Su valor es de $50Mil pesos.</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <br><br><br>
+          <br><br><br>
+
+
+
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static 'core/Img/Palanueva.jpg'%}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Pala Jardinera</h5>
+                <input type="checkbox" id="evento-">
+            <label for="evento-" title="Detalles" class="btn__open-">
+                <i class="fas fa-chevron-down"></i>
+            </label>          
+            <div class="background__blur"></div>          
+            <div class="container__">         
+                <div class="header__">
+                    <label for="evento-">X</label>
+                </div>          
+                <div class="body__">
+                    <h1 class="title__"> Pala Jardinera  </h1>
+                    <p class="message__">Esta herramienta se utiliza para hacer hoyos con los cuales se pueden plantas arboles u diferentes tipos de plantas. Su valor es de $7Mil pesos.</p>
+                </div>
+            </div>
+              </div>
+            </div>
+          </div>
+      </div>  
+        
+
+        
+
+    </div>
+    <br><br><br>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="piepagina">
+      <div class="contenidofooter">
+          <figure>
+              <a href="ini" id="logo">
+                  <img src="{% static 'core/Img/logo.png'%}" alt="NPG" width="100" >
+              </a>
+          </figure>
+          <div ><h2 >NGP</h2></div> <br><br><br>
+          <h4 class="textofooter">Siguenos</h4>
+          <div class="row justify-content-center"><div class="col-4"><img src="{% static 'core/Img/twitter.png'%}" alt="" class="redsocial"></div>
+          <div class="col-4"><img src="{% static 'core/Img/instagram.png'%}" alt="" class="redsocial"></div>
+          <div class="col-4"><img src="{% static 'core/Img/facebook.png'%}" alt="" class="redsocial"></div>
+      </div>
+          
+      </div>
+      <center><p>Benjamín Cepeda, Guido Altamirano, Nicolas Torrejón, Francisco San Martin </p><br>
+      <p>@Copyright Derechos reservados.</p></center>
+      
+      
+       
+          
+   </footer>
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  -->
+</body>
+</html>
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>

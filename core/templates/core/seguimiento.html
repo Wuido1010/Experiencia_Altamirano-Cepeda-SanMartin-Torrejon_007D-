@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/formPersona.css' %}"></link>
+    <link rel="stylesheet" href="cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Creando Vehiculo</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
+  <script src="{% static 'core/js/formPersona.js' %}"></script>
+    <style>
+        body {
+            font-family: Arial;
+          }
+    
+        .error-control {
+            border: 1px solid red;
+        }
+    
+        label.error {
+            color: red;
+            width: 200px;
+            font-size: 0.8em;
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }  
+    
+    </style>
+
+</head>
+<body>
+    <ul class="menu">
+        {% load static %}
+        <li><center><a href="ini"><img src="{% static 'core/img/logo.png'%}" width="30" height="30" ></a></center></li>
+        <li><a href="ini">Inicio</a></li>
+        <li><a href="quienes">Quienes Somos</a></li>
+        <li><a href="Galeria">Galeria de Fotos</a></li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Formularios
+              </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                
+                <li><a class="dropdown-item" href="home">Registrarse</a></li>
+                <li><a class="dropdown-item" href="home2">Comprar Producto</a></li>
+            </ul>
+        </li>
+</ul>
+{% if compra and rut is 0 %}
+<div ALIGN="center">
+    <img src="{% static 'core/img/seguimiento.jpg'%}" ALIGN="center" style="display:block ; max-width:80% ;width: 80%;">
+</div>
+<br>
+<br>
+<div style="margin-left: 7%;">
+    <h5>Nombre de producto: {{compra.producto}}</h5>
+    <h5>Cantidad: {{compra.cantidad}}</h5>
+    <h5>Total: ${{compra.total}}</h5>
+    <h5>Dirección de entrega: {{compra.direccion}}</h5>
+</div>
+<div ALIGN="center">
+    <form method="POST" action="/consultarBoleta">
+        {% csrf_token %}
+        <input type = "text" class = "form-control" style="display: none;" name = "boleta" id="boleta" placeholder = "Ingrese el número de boleta a buscar" value="{{compra.boleta}}">
+        <button id="btn-validar" type = "submit" class = "btn btn-primary" >Volver</button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</div>
+{% elif compra and rut is not 0 %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-sm-4">
+            <div class="titulo" style="margin-top: 22px; text-align: justify; padding: auto;">  
+                <h2>N° de pedido: {{compra.boleta}}</h2> 
+             </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="margin-top: 20px;"> 
+    <div style="background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px 1px black; padding: 30px;">
+    <div class="row justify-content-center" style=" font-size: 20px; text-align: justify; padding: 10px;">  
+    <div class="col-sm-12">
+
+    <br>
+    <div ALIGN="center">
+        <img src="../../static/core/img/seguimiento.png" ALIGN="center" style="display:block ; max-width:80% ;width: 80%;">
+    </div>
+    <br>
+    <br>
+    <div style="margin-left: 7%;">
+        <h5>Nombre de producto: {{compra.producto}}</h5>
+        <h5>Cantidad: {{compra.cantidad}}</h5>
+        <h5>Total: ${{compra.total}}</h5>
+        <h5>Dirección de entrega: {{compra.direccion}}</h5>
+    </div>
+
+
+{% else %}
+<div class="container-fluid" style="margin-top: 20px;"> 
+    <div style="background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px 1px black; padding: 30px;">
+        <div class="row justify-content-center" style=" font-size: 20px; text-align: justify; padding: 10px;">  
+            <div class="col-sm-12">
+                <div ALIGN="center">
+                    <h4 ALIGN="center">Si desea ver el seguimiento su compra, debe acceder primero a "Consultar pedido" en la pestaña "Galeria de fotos" .</h4>
+                    <br>
+                    <a class = "btn btn-primary" href="{% url 'home2' %}">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+<br><br>
+
+
+
+
+</body>
+<footer class="piepagina">
+    <div class="contenidofooter">
+        <figure>
+            <a href="ini" id="logo">
+                <img src="{% static 'core/Img/logo.png'%}" alt="NPG" width="100" >
+            </a>
+        </figure>
+        <div ><h2 >NGP</h2></div> <br><br><br>
+        <h4 class="textofooter">Siguenos</h4>
+        <div class="row justify-content-center"><div class="col-4"><img src="{% static 'core/Img/twitter.png'%}" alt="" class="redsocial"></div>
+        <div class="col-4"><img src="{% static 'core/Img/instagram.png'%}" alt="" class="redsocial"></div>
+        <div class="col-4"><img src="{% static 'core/Img/facebook.png'%}" alt="" class="redsocial"></div>
+    </div>
+        
+    </div>
+    <center><p>Benjamín Cepeda, Guido Altamirano, Nicolas Torrejón, Francisco San Martin </p><br>
+    <p>@Copyright Derechos reservados.</p></center>     
+ </footer>
+</html>

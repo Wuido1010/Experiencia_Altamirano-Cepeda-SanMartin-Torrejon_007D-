@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quienes somos</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/style.css' %}">
+    <link rel="stylesheet" href="{%  static 'core/bootstrap/css/bootstrap.css '%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("#dimagenes1").mouseenter(function(){
+        $("#dimagenes1").css("background-color", "white");
+      });
+      $("#dimagenes1").mouseleave(function(){
+        $("#dimagenes1").css("background-color", "rgb(185, 221, 119");
+      });
+    });
+    </script>
+    
+    
+    <script>
+    $(document).ready(function(){
+      $("#dimagenes2").mouseenter(function(){
+        $("#dimagenes2").css("background-color", "white");
+      });
+      $("#dimagenes2").mouseleave(function(){
+        $("#dimagenes2").css("background-color", "rgb(185, 221, 119");
+      });
+    });
+    </script>
+    
+    
+    <script>
+    $(document).ready(function(){
+      $("#contenido1").mouseenter(function(){
+        $("#contenido1").css("background-color", "white");
+      });
+      $("#contenido1").mouseleave(function(){
+        $("#contenido1").css("background-color", "rgb(236, 196, 136)");
+      });
+    });
+    </script>
+    
+    
+    <script>
+    $(document).ready(function(){
+      $("#contenido2").mouseenter(function(){
+        $("#contenido2").css("background-color", "white");
+      });
+      $("#contenido2").mouseleave(function(){
+        $("#contenido2").css("background-color", "rgb(236, 196, 136)");
+      });
+    });
+    </script>
+    
+    
+    <script>
+    $(document).ready(function(){
+      $("#contenido3").mouseenter(function(){
+        $("#contenido3").css("background-color", "white");
+      });
+      $("#contenido3").mouseleave(function(){
+        $("#contenido3").css("background-color", "rgb(236, 196, 136)");
+      });
+    });
+    </script>
+
+
+
+
+
+</head>
+<body background="{%static 'core/img/fondobody.jpg'%}">
+  <ul class="menu">
+    <li><center><a href="ini"><img src="{% static 'core/Img/logo.png'%}" width="30" height="30" ></a></center></li>
+    <li><a href="ini">Inicio</a></li>
+    <li><a href="#">Quienes Somos</a></li>
+    <li><a href="Galeria">Galeria de Fotos</a></li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Formularios
+          </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+            <li><a class="dropdown-item" href="home">Registrarse</a></li>
+            <li><a class="dropdown-item" href="home2">Comprar Producto</a></li>
+        </ul>
+    </li>
+</ul>
+  
+
+    <center><div ><h1 id="tituloQS">Quienes somos</h1></div>
+    <br><br><br><br><br><br><br><br>
+
+    <p id="contenido1"> Somos NGP, una empresa constituida por una comunidad de vecinos con compromiso social y medioambiental dedicada a la venta de productos de jardinería. Nuestro objetivo es poder aportar mediante nuestras utilidades a fundaciones sin fines de lucro que requieran de nuestra cooperación. El proyecto nació a través de las redes sociales, no obstante, debido al incremento en nuestra demanda, hemos creado nuestra página web que nos permita mayor organización para así continuar con nuestro compromiso con el medio ambiente y rol social.
+    </p></center><br><br>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <br>
+
+
+
+
+    <center><div class="container"><h2 class="tcontenido">Visión</h2>
+     <p id="contenido2">Ser una empresa reconocida e influyente en el rubro por nuestro gran compromiso y aporte con el medio ambiente junto con nuestro rol social.
+    </p> 
+    </center></div><br>
+    <center><div class="container"><h2 class="tcontenido">Misión</h2>
+     <p id="contenido3">Brindar los mejores productos y servicios a nuestros clientes, fomentando mediante nuestras ganancias, el apoyo a quienes más lo necesiten.
+    </p> 
+    <br><br><br><br><br>
+    </center></div>
+    <center><h2 id="nprod">Nuestros Productos</h2></center>
+    <br>
+    
+    <div class="row justify-content-center">
+    <div class="col-4" ><img src="{% static 'core/Img/slider3.png'%}" alt="" class="imagenes"></div>
+    
+    <div class="col-4"><p id="dimagenes1" >Nuestros productos se basan en la comodidad y el facil uso que otorgan, con formas ergonomicas, con buenos materiales de fabricacion. Aparte de crear una buena herramienta, nos preocupamos por la salud de quien va a usar nuestros productos, ya que es facil que se puedan surgir problemas de salud por usar mal una herramienta por un tiempo muy prolonagado </p></div>
+     </div><br><br><br><br><br>
+
+
+     <div class="row justify-content-center">
+        <div class="col-4" ><img src="{% static 'core/Img/slider4.png'%}" alt="" class="imagenes"></div>
+        
+        <div class="col-4"><p id="dimagenes2">Nuestras herramientas de corte como una tijera de jardineria, estan hechas de metal inoxidable para que el usuario pueda darle uso durante mucho tiempo. Estan hechas asi tambien porque mantiene la calidad del corte mucho mas tiempo que el metal corriente</p></div>
+         </div>
+
+
+
+    <br><br>
+
+
+    <br><br><br><br><br><br><br>
+
+
+             <center><iframe width="560" height="315" src="https://www.youtube.com/embed/q0IwZr2SPgU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
+
+
+
+
+             <footer class="piepagina">
+                <div class="contenidofooter">
+                    <figure>
+                        <a href="ini" id="logo">
+                            <img src="{% static 'core/Img/logo.png'%}" alt="NPG" width="100" >
+                        </a>
+                    </figure>
+                    <div ><h2 >NGP</h2></div> <br><br><br>
+                    <h4 class="textofooter">Siguenos</h4>
+                    <div class="row justify-content-center"><div class="col-4"><img src="{% static 'core/Img/twitter.png'%}" alt="" class="redsocial"></div>
+                    <div class="col-4"><img src="{% static 'core/Img/instagram.png'%}" alt="" class="redsocial"></div>
+                    <div class="col-4"><img src="{% static 'core/Img/facebook.png'%}" alt="" class="redsocial"></div>
+                </div>
+                    
+                </div>
+                <center><p>Benjamín Cepeda, Guido Altamirano, Nicolas Torrejón, Francisco San Martin </p><br>
+                <p>@Copyright Derechos reservados.</p></center>     
+             </footer>
+
+
+           
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
