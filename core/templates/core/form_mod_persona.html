@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/formPersona.css' %}"></link>
+    <link rel="stylesheet" href="cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Creando Vehiculo</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
+    <script src="{% static 'core/js/formPersona.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+
+        <form method="post" action="/editarRegistro" id="formulario">
+            {% csrf_token %}
+            <input type="hidden" name="metodo" id="metodo" value="PUT" />
+                <h1>Edición de Registro</h1>
+                <label>Nombre</label>
+                <input type = "text" class = "form-control" name = "nombre" id="nombre" placeholder = "Ingrese sus Nombres" value="{{Persona.nombre}}"/>
+                <br/>
+                <label>Apellido</label>
+                <input type = "text" class = "form-control" name = "apellido" id="apellido" placeholder = "Ingrese sus Apellidos"  value="{{Persona.apellido}}"/>
+                <br/>
+                <label>Rut</label>
+                <input type = "text" class = "form-control" name = "rut" id="rut" placeholder = "Ingrese su Rut" readonly value="{{Persona.rut}}"/>
+                <br/>
+                <label>Email</label>
+                <input type = "text" class = "form-control" name = "email" id="email" placeholder = "Ingrese su Email" value="{{Persona.email}}"/>
+                <br/>
+                <label>Contraseña</label>
+                <input type = "password" class = "form-control" name = "contraseña" placeholder = "Ingrese su Contraseña" id = "contraseña" value="{{Persona.contraseña}}"/>
+                <br/>
+                <label>Confirmar Contraseña</label>
+                <input type = "password" class = "form-control" name = "conficontraseña" placeholder = "Ingrese nuevamente su Contraseña" id = "conficontraseña" value="{{Persona.conficontraseña}}"/>
+                <br/>
+                <label>Género</label>
+                    <div>
+                        <select class = "form-control" name = "genero" id="genero">
+                            <option value="{{Persona.genero}}" selected="" >{{Persona.genero}}</option>
+                            <option>Masculino</option>
+                            <option>Femenino</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                <br/>
+                <label>¿Deseas ser socio de nuestra empresa? Si eres socio, tendras descuento en tus compras. Valor socio: $5000 mensual.</label>
+                    <div>
+						<select class = "form-control" name = "suscripcion" id="suscripcion">
+                            <option value="{{Persona.suscripcion}}" selected="">{{Persona.suscripcion}}</option>
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                <br/>
+                <label>Dirección</label>
+                <textarea class = "form-control" name = "direccion" placeholder="Ingrese su Dirección" id="direccion" >{{Persona.direccion}}</textarea>
+                <br/>
+                <button id="btn-validar" type = "submit" class = "btn btn-primary" >Modificar</button>
+                <button type = "reset" class = "btn btn-primary" >Limpiar</button>
+                <br><br>
+                <a class="btn btn-primary" href="{% url 'consultarRegistro' %}">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
